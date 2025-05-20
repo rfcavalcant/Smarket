@@ -1,0 +1,15 @@
+# Node.js
+node_modules/
+dist/
+
+# Java
+target/
+*.log
+
+# IDEs
+.vscode/
+.idea/
+
+# SO
+.DS_Store
+Thumbs.db

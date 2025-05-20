@@ -21,8 +21,8 @@ export interface StockStatus {
   providedIn: 'root'
 })
 export class ProductService {
-  private productUrl = 'http://localhost:8080/products'; // Porta do seu serviço de produtos
-  private stockUrl = 'http://localhost:8081/stock';      // Porta do seu serviço de estoque
+  private productUrl = 'http://localhost:8080/products'; // Porta do serviço de produtos
+  private stockUrl = 'http://localhost:8081/stock';      // Porta do serviço de estoque
 
   constructor(private http: HttpClient) { }
 
@@ -36,10 +36,8 @@ export class ProductService {
 
   createProduct(product: Product): Observable<Product> {
   if (product.id) {
-    // PUT para atualizar
     return this.http.put<Product>(`${this.productUrl}/${product.id}`, product);
   } else {
-    // POST para criar
     return this.http.post<Product>(this.productUrl, product);
   }
 }

@@ -28,6 +28,4 @@ public class Product {
     private BigDecimal price;
 
     private Integer quantity;
-
-    // Getters e setters (ou use Lombok se preferir)
 }

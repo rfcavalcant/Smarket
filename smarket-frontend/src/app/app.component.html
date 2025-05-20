@@ -30,7 +30,6 @@
   </tbody>
 </table>
 
-<!-- Formulário para criar/editar produto -->
 <div *ngIf="showForm" style="margin-top: 20px; border: 1px solid #ccc; padding: 15px; max-width: 400px;">
   <h2>{{ editingProduct ? 'Editar Produto' : 'Criar Produto' }}</h2>
   <form (ngSubmit)="saveProduct()">

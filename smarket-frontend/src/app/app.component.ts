@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ProductService, Product, StockStatus } from './services/product.service';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
-import { HttpClientModule } from '@angular/common/http';  // <-- Importar aqui
+import { HttpClientModule } from '@angular/common/http';
 
 @Component({
   selector: 'app-root',

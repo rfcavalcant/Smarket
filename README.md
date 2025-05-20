@@ -2,6 +2,11 @@
 
 Projeto desenvolvido como parte de um case técnico, composto por dois microsserviços em Java Spring Boot e um frontend em Angular. A aplicação permite o gerenciamento de produtos e a visualização de estoque em tempo real.
 
+## Clone
+```
+git clone https://github.com/rfcavalcant/Smarket.git
+```
+
 ---
 
 ## 🧩 Estrutura do Projeto

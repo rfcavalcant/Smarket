@@ -1,0 +1,20 @@
+<h2>Status de Estoque</h2>
+
+<label for="productId">ID do Produto:</label>
+<input type="number" [(ngModel)]="productId" />
+<button (click)="checkStock()">Consultar</button>
+
+<div *ngIf="stockStatus">
+  <p><strong>Nome:</strong> {{ stockStatus.name }}</p>
+  <p><strong>Quantidade:</strong> {{ stockStatus.quantity }}</p>
+  <p>
+    <strong>Status:</strong>
+    <span [style.color]="stockStatus.lowStock ? 'red' : 'green'">
+      {{ stockStatus.lowStock ? 'Estoque Baixo' : 'Estoque OK' }}
+    </span>
+  </p>
+</div>
+
+<div *ngIf="errorMessage" style="color: red;">
+  {{ errorMessage }}
+</div>

@@ -1,0 +1,5 @@
+org\example\stock\controller\StockController.class
+org\example\stock\StockServiceApplication.class
+org\example\stock\dto\ProductDTO.class
+org\example\stock\service\StockService.class
+org\example\stock\StockServiceApplication$1.class

@@ -1,0 +1,8 @@
+org\example\dto\ProductDTO.class
+org\example\repository\ProductRepository.class
+org\example\service\ProductServiceImpl.class
+org\example\entity\Product.class
+org\example\controller\ProductController.class
+org\example\service\ProductService.class
+org\example\ProductServiceApplication.class
+org\example\ProductServiceApplication$1.class

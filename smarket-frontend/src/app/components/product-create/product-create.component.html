@@ -1,0 +1,43 @@
+<h2>Cadastrar Produto</h2>
+
+<form [formGroup]="productForm" (ngSubmit)="onSubmit()">
+
+  <label for="name">Nome:</label><br/>
+  <input id="name" formControlName="name" />
+  <div *ngIf="submitted && productForm.controls['name'].invalid" style="color:red">
+    Nome é obrigatório.
+  </div>
+
+  <br/>
+
+  <label for="description">Descrição:</label><br/>
+  <textarea id="description" formControlName="description"></textarea>
+
+  <br/>
+
+  <label for="price">Preço:</label><br/>
+  <input id="price" type="number" step="0.01" formControlName="price" />
+  <div *ngIf="submitted && productForm.controls['price'].invalid" style="color:red">
+    Preço deve ser maior que zero.
+  </div>
+
+  <br/>
+
+  <label for="quantity">Quantidade:</label><br/>
+  <input id="quantity" type="number" formControlName="quantity" />
+  <div *ngIf="submitted && productForm.controls['quantity'].invalid" style="color:red">
+    Quantidade deve ser zero ou maior.
+  </div>
+
+  <br/>
+
+  <button type="submit">Cadastrar</button>
+</form>
+
+<div *ngIf="successMessage" style="color: green; margin-top: 10px;">
+  {{ successMessage }}
+</div>
+
+<div *ngIf="errorMessage" style="color: red; margin-top: 10px;">
+  {{ errorMessage }}
+</div>

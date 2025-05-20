@@ -1,0 +1,47 @@
+version: '3.8'
+
+services:
+  mysql:
+    image: mysql:8.0
+    container_name: mysql-smarket
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: productdb
+    ports:
+      - "3306:3306"
+    networks:
+      - smarket-network
+    volumes:
+      - mysql-data:/var/lib/mysql
+
+  product-service:
+    container_name: product-service
+    build:
+      context: ./product-service
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+    depends_on:
+      - mysql
+    networks:
+      - smarket-network
+
+  stock-service:
+    container_name: stock-service
+    build:
+      context: ./stock-service
+      dockerfile: Dockerfile
+    ports:
+      - "8081:8081"
+    depends_on:
+      - product-service
+    networks:
+      - smarket-network
+
+volumes:
+  mysql-data:
+
+networks:
+  smarket-network:
+    driver: bridge
